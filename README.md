@@ -31,15 +31,32 @@ https://raw.githubusercontent.com/Dullfin/gtw-mod-index/main/mods.json
 
 | Field | Required | Notes |
 |---|---|---|
-| `id` | yes | Unique. Use your `[BepInPlugin]` GUID. |
+| `id` | yes | Unique. Use your `[BepInPlugin]` GUID or MelonLoader mod name. |
 | `name` | yes | |
 | `repo` | yes* | `owner/name` on GitHub. The newest non-prerelease release is used. |
 | `asset` | no | Release file to download, `*` wildcards allowed. Default: the first `.zip`, else the first `.dll`. |
+| `nexus` | yes* | A Nexus Mods mod instead of GitHub: `{ "modId": 12 }`. Optional `"file"` picks a file by name (`*` wildcards); default is the newest main file. |
+| `loader` | no | `"bepinex"` or `"melonloader"`. If missing, the app reads the mod's DLLs to tell. |
 | `author`, `description`, `homepage`, `tags` | no | Shown in the app. |
 | `dependencies` | no | `id`s of other mods in this list. They're installed first. |
 | `downloadUrl`, `version`, `sha256` | no* | Use instead of `repo` for a fixed file hosted elsewhere. `sha256` is checked after download. |
 
-\* Each entry needs either `repo` or `downloadUrl`.
+\* Each entry needs exactly one of `repo`, `nexus` or `downloadUrl`.
+
+### Nexus Mods
+
+Get To Work mods on Nexus only offer "Manual download", so the app opens the mod's Files page in the
+browser and installs the file as soon as it lands in the Downloads folder. Users with a Nexus Premium
+API key get direct downloads. A Nexus mod can be added here with just its `modId`:
+
+```json
+{ "id": "nexus.gettowork.12", "name": "Jump To Work", "author": "FinnLop", "nexus": { "modId": 12 }, "loader": "bepinex" }
+```
+
+### MelonLoader mods
+
+The app manages BepInEx and MelonLoader side by side, with one active at a time. MelonLoader zips
+can use `Mods/`, `Plugins/`, `UserLibs/` and `UserData/` folders, or just contain the mod DLL.
 
 A check runs on every pull request to make sure the file is valid JSON, ids are unique, and required fields are present.
 
