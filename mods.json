@@ -2,6 +2,16 @@
   "schemaVersion": 1,
   "mods": [
     {
+      "id": "Dullfin.GrabCounter",
+      "name": "Grab Counter",
+      "author": "Dullfin",
+      "description": "Counts the number of grabs you perform.",
+      "repo": "Dullfin/gtw-grab-counter",
+      "asset": "GrabCounter.dll",
+      "loader": "bepinex",
+      "tags": [ "ui", "counter" ]
+    },
+    {
       "id": "mxous.PodcastRandomizer",
       "name": "Podcast Randomizer",
       "author": "mxous",
