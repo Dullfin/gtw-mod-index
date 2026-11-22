@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "mods": [
+    {
+      "id": "sinai-dev.UnityExplorer",
+      "name": "UnityExplorer",
+      "author": "sinai-dev",
+      "description": "In-game inspector for Unity objects, scenes and components. Useful for finding things to mod.",
+      "homepage": "https://github.com/sinai-dev/UnityExplorer",
+      "repo": "sinai-dev/UnityExplorer",
+      "asset": "UnityExplorer.BepInEx5.Mono.zip",
+      "tags": [ "tools", "debug" ]
+    }
+  ]
+}
