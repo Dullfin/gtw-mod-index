@@ -2,6 +2,16 @@
   "schemaVersion": 1,
   "mods": [
     {
+      "id": "Dullfin.LevelEditor",
+      "name": "Level Editor",
+      "author": "Dullfin",
+      "description": "Build and play your own courses in game: curved ramps, launchers, cogs, pendulums, moving platforms and ice. Open it from Level Editor on the title screen; levels save as shareable JSON files.",
+      "repo": "Dullfin/gtw-level-editor",
+      "asset": "GTWLevelEditor.dll",
+      "loader": "bepinex",
+      "tags": [ "maps", "tools" ]
+    },
+    {
       "id": "Dullfin.GrabCounter",
       "name": "Grab Counter",
       "author": "Dullfin",
